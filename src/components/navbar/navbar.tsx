@@ -1,5 +1,5 @@
 import React from 'react';
-import webImage from "../../assets/product_list.png";
+import webImage from "@/assets/product_list.png";
 
 const Navbar: React.FC = () => {
 
