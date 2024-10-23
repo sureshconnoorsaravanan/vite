@@ -1,17 +1,20 @@
-import Home from "./views/home";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Products from "./views/products";
+import { Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import Home from './views/home';
+import ProductList from './views/productlist';
+import Navbar from './components/navbar/navbar';
+import { store } from './redux/store';
 
-const App = () => {
+const App: React.FC = () => {
   return (
-    <>
-       <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<Products />} />
-      </Routes>
-    </Router>
-      </>
+    <Provider store={store}>
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/list/:categoryId" element={<ProductList />} />
+        </Routes>
+  </Provider>
+   
   );
 };
 
