@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { fetchProductsByCategory } from '../../redux/slices/products/productSlice';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { fetchProductsByCategory } from '../redux/slices/products/productSlice';
 
 const ProductList: React.FC = () => {
     
