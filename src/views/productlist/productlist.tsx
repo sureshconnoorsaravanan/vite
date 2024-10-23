@@ -34,9 +34,11 @@ const ProductList: React.FC = () => {
             </div>
             <div className="card-body">
               <header>
-              <h6 className="product-header">{product.title.slice(0, 10)}...</h6>
+                <h6 className="product-header text-truncate">{product.title}</h6>
               </header>
-              <p className="card-text">{ product.description.slice(0, 50)	}...</p>
+              <p className="card-text">
+                <b>Price:</b> ${product.price.toFixed(2)}
+              </p>
               <button className='btn btn-warning'>Add Cart</button>
             </div>
           </div>
