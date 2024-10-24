@@ -18,7 +18,7 @@ const ProductList: React.FC = () => {
     <div className="container mt-5">
       <div className="row mt-5">
         {products.map((product, index) => (
-          <div className="col-lg-3" key={index + 1}>
+          <div className="col-md-4 col-lg-3" key={index + 1}>
             <div className="card mx-1 my-1 p-3" role="group" aria-labelledby={`product-header-${index}`}>
               <div className="text-center">
                 <img
