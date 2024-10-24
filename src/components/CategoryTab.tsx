@@ -14,18 +14,19 @@ const CategoryTab: React.FC = () => {
 
   const handleCategoryClick = (item: string) => {
     navigate("list/" + encodeURIComponent(item));
-  }
+  };
 
   return (
-    <div className='container mt-2'>
+    <div className="container mt-2">
       <h4>Select Category:</h4>
-      <div className='d-flex flex-wrap'>
+      <div className="d-flex flex-wrap" role="group" aria-label="Category selection">
         {categories.map((item, index) => (
           <button
-            className='btn btn-secondary mx-2 text-capitalize'
+            className="btn btn-secondary mx-2 text-capitalize"
             key={index}
             onClick={() => handleCategoryClick(item)}
             aria-label={`Select ${item} category`}
+            tabIndex={0}
           >
             {item}
           </button>

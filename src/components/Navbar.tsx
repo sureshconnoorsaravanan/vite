@@ -3,23 +3,53 @@ import { useNavigate } from 'react-router-dom';
 import { IoIosNotifications } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
 
+const inStyle= {
+    background: 'none',
+    border: 'none'
+}
 
 const Navbar: React.FC = () => {
     const navigate = useNavigate();
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLHeadingElement>) => {
+        if (e.key === 'Enter') {
+            navigate("/");
+        }
+    };
+
     return (
-        <div className="bg-primary">
+        <nav className="bg-primary" aria-label="Main Navigation">
             <div className="py-2 d-flex align-items-center justify-content-between container">
-                <div className='d-flex align-items-center'>
-                    <h3 className='mb-0' style={{cursor:"pointer"}} onClick={()=>navigate("/")}>E-commerce</h3>
+                <div className="d-flex align-items-center">
+                    <h3 
+                        className="mb-0" 
+                        style={{ cursor: "pointer" }} 
+                        onClick={() => navigate("/")} 
+                        aria-label="Go to Home Page"
+                        tabIndex={0}
+                        onKeyDown={handleKeyDown}  
+                    >
+                        E-commerce
+                    </h3>
                 </div>
                 <div>
-                    <IoIosNotifications color='white' size={25} className='me-2' />
-                    <FaShoppingCart color='white' size={20}/>
+                    <button 
+                        aria-label="View notifications" 
+                        className="btn-icon"
+                        style={inStyle}
+                    >
+                        <IoIosNotifications color="white" size={25} className="me-2" />
+                    </button>
+                    <button 
+                        aria-label="View shopping cart" 
+                        className="btn-icon"
+                        style={inStyle}
+                    >
+                        <FaShoppingCart color="white" size={20} />
+                    </button>
                 </div>
             </div>
-        </div>
-
+        </nav>
     );
 };
 

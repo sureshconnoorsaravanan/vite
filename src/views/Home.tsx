@@ -3,9 +3,11 @@ import '../styles/home.scss';
 
 const Home: React.FC = () => {
     return (
-        <div className='home-container'>
-            <h1 className='welcome-note'>Welcome to Our E-commerce Store!</h1>
-            <p className='welcome-message'>
+        <div className="home-container">
+            <h1 className="welcome-note">
+                Welcome to Our E-commerce Store!
+            </h1>
+            <p className="welcome-message">
                 Discover amazing products and shop your favorites at the best prices!
             </p>
             <div className="promotional-text">
