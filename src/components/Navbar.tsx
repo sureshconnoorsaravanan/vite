@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <div className="bg-info" aria-label="Main Navigation"> 
+        <nav className="bg-info" aria-label="Main Navigation"> 
             <div className="py-2 d-flex align-items-center justify-content-between container">
                 <div className='d-flex align-items-center'>
                     <h3 
@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </nav>
     );
 };
 
