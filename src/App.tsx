@@ -1,3 +1,4 @@
+import React from 'react'; // Add React import
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Navbar from './components/Navbar';

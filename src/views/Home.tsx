@@ -11,13 +11,13 @@ const Home: React.FC = () => {
             <div className="promotional-text">
                 <h2>Featured Products</h2>
                 <p>
-                    Explore our collection of hand-picked items just for you. Whether you're looking for electronics, clothing, or home decor, we have something special for everyone.
+                    Explore our collection of hand-picked items just for you. Whether you&apos;re looking for electronics, clothing, or home decor, we have something special for everyone.
                 </p>
                 <h2>Why Choose Us?</h2>
                 <ul>
-                    <li>Exclusive Deals & Discounts</li>
+                    <li>Exclusive Deals &amp; Discounts</li>
                     <li>Quality Assurance on All Products</li>
-                    <li>Fast & Reliable Shipping</li>
+                    <li>Fast &amp; Reliable Shipping</li>
                     <li>Customer Satisfaction Guarantee</li>
                 </ul>
                 <p>
