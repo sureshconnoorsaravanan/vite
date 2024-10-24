@@ -10,26 +10,26 @@ const CategoryTab: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
-  const { categories } = useAppSelector((state) => state.products);
+  const { categories } = useAppSelector(state => state.products);
 
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
   const handleCategoryClick = (item: string) => {
-    navigate("list/" + encodeURIComponent(item));
+    navigate('list/' + encodeURIComponent(item));
   };
 
   return (
-    <div className='category-tab-container'>
-      <div className='category-header'>
-        <h4 className='category-title'>{t('category')}</h4>
+    <div className="category-tab-container">
+      <div className="category-header">
+        <h4 className="category-title">{t('category')}</h4>
         <LanguageSwitch />
       </div>
-      <div className='category-buttons' role="group" aria-label="Category selection">
+      <div className="category-buttons" role="group" aria-label="Category selection">
         {categories.map((item, index) => (
           <button
-            className='category-button'
+            className="category-button"
             key={index}
             onClick={() => handleCategoryClick(item)}
             aria-label={`Select ${item} category`}

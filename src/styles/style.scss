@@ -17,7 +17,6 @@ $bright_yellow: #ffc107;
 $dark_text_color: $bright_yellow;
 $light_text_color: $text_color;
 
-
 .language-switch {
   display: flex;
   align-items: center;
@@ -170,10 +169,11 @@ body.dark {
   transition: background-color 0.3s ease;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .back-button:hover {
-  background-color: #357ABD;
+  background-color: #357abd;
 }
-

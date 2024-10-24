@@ -18,23 +18,19 @@ const App: React.FC = () => {
       <header>
         <Navbar />
       </header>
-      
+
       <nav aria-label="Category navigation">
         <CategoryTab />
       </nav>
 
-      {location.pathname !== "/" && (
+      {location.pathname !== '/' && (
         <div className="container mt-3 d-flex justify-content-end">
-          <button
-            className="back-button"
-            onClick={() => navigate("/")}
-            aria-label="Back to Home"  
-          >
+          <button className="back-button" onClick={() => navigate('/')} aria-label="Back to Home">
             ← {t('back-to-home')}
           </button>
         </div>
       )}
-      
+
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -8,7 +8,7 @@ const ProductList: React.FC = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
-  const { products } = useAppSelector((state) => state.products);
+  const { products } = useAppSelector(state => state.products);
 
   useEffect(() => {
     if (categoryId) {
@@ -21,7 +21,11 @@ const ProductList: React.FC = () => {
       <div className="row">
         {products.map((product, index) => (
           <div className="col-lg-3 col-md-4 col-sm-6 mb-3" key={product.id}>
-            <div className="card mx-1 my-1 p-3" role="group" aria-labelledby={`product-header-${index}`}>
+            <div
+              className="card mx-1 my-1 p-3"
+              role="group"
+              aria-labelledby={`product-header-${index}`}
+            >
               <div className="text-center">
                 <img
                   alt={product.title}
@@ -32,9 +36,9 @@ const ProductList: React.FC = () => {
               </div>
               <div className="card-body">
                 <header>
-                  <h6 
-                    className="product-header text-truncate" 
-                    id={`product-header-${index}`} 
+                  <h6
+                    className="product-header text-truncate"
+                    id={`product-header-${index}`}
                     tabIndex={0}
                   >
                     {product.title}
@@ -43,10 +47,7 @@ const ProductList: React.FC = () => {
                 <p className="card-text">
                   <strong>{t('price')}:</strong> ${product.price.toFixed(2)}
                 </p>
-                <button 
-                  className="btn btn-warning" 
-                  aria-label={`Add ${product.title} to cart`}
-                >
+                <button className="btn btn-warning" aria-label={`Add ${product.title} to cart`}>
                   {t('add-cart')}
                 </button>
               </div>

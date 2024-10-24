@@ -1,27 +1,27 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
 
 export default [
   { ignores: ['dist'] }, // Specify directories to ignore
   {
-    files: ["{js,jsx,ts,tsx}"], // Main file types to lint
+    files: ['{js,jsx,ts,tsx}'], // Main file types to lint
     languageOptions: {
       globals: {
         ...globals.browser,
-        IS_REACT_ACT_ENVIRONMENT: "readonly",
-        __REACT_DEVTOOLS_GLOBAL_HOOK__: "readonly",
-        global: "readonly",
-        setImmediate: "readonly",
-        process: "readonly",
-        Buffer: "readonly",
-        WorkerGlobalScope: "readonly",
+        IS_REACT_ACT_ENVIRONMENT: 'readonly',
+        __REACT_DEVTOOLS_GLOBAL_HOOK__: 'readonly',
+        global: 'readonly',
+        setImmediate: 'readonly',
+        process: 'readonly',
+        Buffer: 'readonly',
+        WorkerGlobalScope: 'readonly',
       },
       parser: tseslint.ESLintParser, // Specify the TypeScript parser
       parserOptions: {
         ecmaVersion: 2021,
-        sourceType: "module",
+        sourceType: 'module',
         ecmaFeatures: {
           jsx: true, // Enable JSX
         },
@@ -29,7 +29,7 @@ export default [
     },
     settings: {
       react: {
-        version: "detect", // Automatically detect the version of React
+        version: 'detect', // Automatically detect the version of React
       },
     },
     // Custom rules should be included here

@@ -13,7 +13,7 @@ export const loadLanguage = async (language: string): Promise<void> => {
       error.status = response.status; // Optional: Store the status code if needed
       throw error;
     }
-    
+
     const translation = await response.json();
     i18n.addResources(language, 'translation', translation);
     i18n.changeLanguage(language);

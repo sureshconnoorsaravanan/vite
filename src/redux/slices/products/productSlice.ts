@@ -40,7 +40,7 @@ export const fetchProductsByCategory = createAsyncThunk(
   async (categoryId: string) => {
     const response = await axios.get(`https://fakestoreapi.com/products/category/${categoryId}`);
     return response.data;
-  }
+  },
 );
 
 // Create the slice
@@ -52,9 +52,9 @@ const productSlice = createSlice({
       state.language = action.payload; // Update language in state
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     // Handle categories fetching
-    builder.addCase(fetchCategories.pending, (state) => {
+    builder.addCase(fetchCategories.pending, state => {
       state.loading = true;
     });
     builder.addCase(fetchCategories.fulfilled, (state, action) => {
@@ -69,7 +69,7 @@ const productSlice = createSlice({
     });
 
     // Handle products fetching by category
-    builder.addCase(fetchProductsByCategory.pending, (state) => {
+    builder.addCase(fetchProductsByCategory.pending, state => {
       state.loading = true;
     });
     builder.addCase(fetchProductsByCategory.fulfilled, (state, action) => {
