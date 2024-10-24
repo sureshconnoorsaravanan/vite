@@ -1,16 +1,13 @@
 import React from 'react';
 import "../styles/footer.scss";
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+    const { t } = useTranslation();
     return (
-        <footer className='footer-container'>
+        <footer className='footer-container' aria-label="Footer">
             <div className='footer-content'>
-                <p>&copy; {new Date().getFullYear()} E-commerce Store. All Rights Reserved.</p>
-                <div className='footer-links'>
-                    <a href='/privacy-policy'>Privacy Policy</a>
-                    <a href='/terms-of-service'>Terms of Service</a>
-                    <a href='/contact'>Contact Us</a>
-                </div>
+                <p>&copy; {new Date().getFullYear()} {t('footer-rights')}</p>
             </div>
         </footer>
     );

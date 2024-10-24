@@ -1,0 +1,22 @@
+{
+  "app-title": "Commerce Électronique",
+  "category": "Sélectionner une Catégorie",
+  "error": "Erreur : {{error}}",
+  "language": "Sélectionner la Langue",
+  "price": "Prix",
+  "add-cart": "Ajouter au Panier",
+  "back-to-home": "Retour à l'Accueil",
+  "welcome-note": "Bienvenue dans Notre Boutique E-commerce !",
+  "welcome-message": "Découvrez des produits étonnants et achetez vos favoris aux meilleurs prix !",
+  "featured-products": "Produits en Vedette",
+  "explore-collection": "Explorez notre collection d'articles sélectionnés juste pour vous. Que vous cherchiez des appareils électroniques, des vêtements ou de la décoration intérieure, nous avons quelque chose de spécial pour tout le monde.",
+  "why-choose-us": "Pourquoi Nous Choisir ?",
+  "exclusive-deals": "Offres et Remises Exclusives",
+  "quality-assurance": "Assurance Qualité sur Tous les Produits",
+  "fast-reliable-shipping": "Expédition Rapide et Fiable",
+  "customer-satisfaction": "Garantie de Satisfaction Client",
+  "start-shopping": "Commencez à magasiner maintenant et profitez d'une expérience de magasinage en ligne sans faille !",
+  "footer-rights": "Magasin E-commerce. Tous droits réservés.",
+  "load-error": "Erreur lors du chargement de la langue {{language}} : {{error}}"
+}
+

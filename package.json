@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -27,7 +27,12 @@
     "react-router-dom": "^6.27.0",
     "sass": "^1.80.3",
     "sass-loader": "^16.0.2",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "i18next": "^23.16.0",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.6.2",
+    "i18next-localstorage-backend": "^4.2.0",
+    "react-i18next": "^15.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

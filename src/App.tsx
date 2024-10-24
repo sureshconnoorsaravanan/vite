@@ -1,37 +1,51 @@
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { store } from './redux/store';
-import Home from './views/Home.tsx';
-import ProductList from './views/ProductList.tsx';
-import CategoryTab from './components/CategoryTab.tsx';
-import Footer from './components/Footer.tsx';
+import Home from './views/Home';
+import ProductList from './views/ProductList';
+import Footer from './components/Footer';
+import CategoryTab from './components/CategoryTab';
+import { useTranslation } from 'react-i18next';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
+
   return (
     <Provider store={store}>
-      <Navbar/>
-      <CategoryTab />
+      <header>
+        <Navbar />
+      </header>
+      
+      <nav aria-label="Category navigation">
+        <CategoryTab />
+      </nav>
+
       {location.pathname !== "/" && (
         <div className="container mt-3 d-flex justify-content-end">
           <button
-            className="btn btn-light"
-            style={{ cursor: "pointer" }}
+            className="back-button"
             onClick={() => navigate("/")}
+            aria-label="Back to Home"  
           >
-            ← Back to Home
+            ← {t('back-to-home')}
           </button>
         </div>
       )}
+      
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/list/:categoryId" element={<ProductList />} />
         </Routes>
+      </main>
+
+      <footer>
         <Footer />
-  </Provider>
-   
+      </footer>
+    </Provider>
   );
 };
 

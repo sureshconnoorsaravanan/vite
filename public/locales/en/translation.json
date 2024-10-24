@@ -1,0 +1,21 @@
+{
+  "app-title": "E-commerce",
+  "category": "Select Category",
+  "error": "Error: {{error}}",
+  "language": "Select Language",
+  "price": "Price",
+  "add-cart": "Add Cart",
+  "back-to-home": "Back to Home",
+  "welcome-note": "Welcome to Our E-commerce Store!",
+  "welcome-message": "Discover amazing products and shop your favorites at the best prices!",
+  "featured-products": "Featured Products",
+  "explore-collection": "Explore our collection of hand-picked items just for you. Whether you're looking for electronics, clothing, or home decor, we have something special for everyone.",
+  "why-choose-us": "Why Choose Us?",
+  "exclusive-deals": "Exclusive Deals & Discounts",
+  "quality-assurance": "Quality Assurance on All Products",
+  "fast-reliable-shipping": "Fast & Reliable Shipping",
+  "customer-satisfaction": "Customer Satisfaction Guarantee",
+  "start-shopping": "Start shopping now and enjoy a seamless online shopping experience!",
+  "footer-rights": "E-commerce Store. All Rights Reserved.",
+  "load-error": "Error loading language {{language}}: {{error}}"
+}
