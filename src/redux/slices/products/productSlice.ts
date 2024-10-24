@@ -1,5 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
+import i18n from 'i18next';
 
 // Define the Product interface
 interface Product {
@@ -10,11 +11,12 @@ interface Product {
 }
 
 // Define the initial state type
-interface ProductState {
+export interface ProductState {
   categories: string[];
   products: Product[];
   loading: boolean;
   error: string | null;
+  language: string;
 }
 
 // Initial state
@@ -23,6 +25,7 @@ const initialState: ProductState = {
   products: [],
   loading: false,
   error: null,
+  language: 'en', // Default language
 };
 
 // Async thunk for fetching categories
@@ -37,41 +40,50 @@ export const fetchProductsByCategory = createAsyncThunk(
   async (categoryId: string) => {
     const response = await axios.get(`https://fakestoreapi.com/products/category/${categoryId}`);
     return response.data;
-  }
+  },
 );
 
 // Create the slice
 const productSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
+  reducers: {
+    setLanguage: (state, action: PayloadAction<string>) => {
+      state.language = action.payload; // Update language in state
+    },
+  },
+  extraReducers: builder => {
     // Handle categories fetching
-    builder.addCase(fetchCategories.pending, (state) => {
+    builder.addCase(fetchCategories.pending, state => {
       state.loading = true;
     });
     builder.addCase(fetchCategories.fulfilled, (state, action) => {
       state.loading = false;
       state.categories = action.payload;
     });
-    builder.addCase(fetchCategories.rejected, (state) => {
+    builder.addCase(fetchCategories.rejected, (state, action) => {
       state.loading = false;
-      state.error = 'Failed to fetch categories';
+      const errorMessage = action.error.message || 'Failed to fetch categories';
+      const localizedErrorMessage = i18n.t('error', { error: errorMessage });
+      state.error = localizedErrorMessage;
     });
 
     // Handle products fetching by category
-    builder.addCase(fetchProductsByCategory.pending, (state) => {
+    builder.addCase(fetchProductsByCategory.pending, state => {
       state.loading = true;
     });
     builder.addCase(fetchProductsByCategory.fulfilled, (state, action) => {
       state.loading = false;
       state.products = action.payload;
     });
-    builder.addCase(fetchProductsByCategory.rejected, (state) => {
+    builder.addCase(fetchProductsByCategory.rejected, (state, action) => {
       state.loading = false;
-      state.error = 'Failed to fetch products by category';
+      const errorMessage = action.error.message || 'Failed to fetch products by category';
+      const localizedErrorMessage = i18n.t('error', { error: errorMessage });
+      state.error = localizedErrorMessage;
     });
   },
 });
 
+export const { setLanguage } = productSlice.actions;
 export default productSlice.reducer;

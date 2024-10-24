@@ -1,63 +1,66 @@
 .home-container {
-    text-align: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f1f3f5;
+
+  .welcome-note {
+    font-size: 2em;
+    margin-bottom: 8px;
+    color: #343a40;
+    font-weight: 600;
+  }
+
+  .welcome-message {
+    font-size: 1.1em;
+    color: #495057;
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  .promotional-text {
+    margin-top: 25px;
+    text-align: left;
+    max-width: 650px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #f8f9fa; 
-   .welcome-note {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-        color: #343a40;  
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      font-size: 1.8em;
+      color: #5788bc;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #6293c8;
+      padding-bottom: 5px;
     }
 
-    .welcome-message {
-        font-size: 1.2em;
-        color: #6c757d; 
-        margin-bottom: 20px;
+    p {
+      font-size: 0.95em;
+      color: #495057;
+      margin-bottom: 12px;
+      line-height: 1.5;
     }
 
-    .promotional-text {
-        margin-top: 30px;
-        text-align: left;  
-        max-width: 600px;  
-        margin: 0 auto;  
-        h2 {
-            font-size: 2em;
-            color: #007bff;  
-            margin-bottom: 15px;
-        }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 12px;
 
-        p {
-            font-size: 1em;
-            color: #495057; 
-            margin-bottom: 15px;
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;  
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin: 5px 0; 
-        }
-    }
-    
-}
-@media screen and (max-width:576px){
-    .home-container{
-        background-color: #99f49a;
-        margin-top: 10px;
-    }
-}
-@media screen and (min-width:768px) and (max-width:991px){
-    .home-container{
-        background-color: #f849c3;
-        margin-top: 10px;
-    }
-}
-@media (min-width: 992px) and (max-width:1200px) {
-    .home-container{
-        background-color: #7fcfec;
-        margin-top: 10px;
+      li {
+        margin: 4px 0;
+        font-size: 1em;
+        color: #444b51;
+      }
     }
   }
+
+  a {
+    color: #a9c5e4;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

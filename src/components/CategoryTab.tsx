@@ -2,28 +2,34 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { fetchCategories } from '../redux/slices/products/productSlice';
-import "../styles/style.scss"
+import LanguageSwitch from './LanguageSwitch/LanguageSwitch';
+import { useTranslation } from 'react-i18next';
+import '../styles/categoryTab.scss';
 
 const CategoryTab: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { categories } = useAppSelector((state) => state.products);
+  const { t } = useTranslation();
+  const { categories } = useAppSelector(state => state.products);
 
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
   const handleCategoryClick = (item: string) => {
-    navigate("list/" + encodeURIComponent(item));
+    navigate('list/' + encodeURIComponent(item));
   };
 
   return (
-    <div className="container mt-2">
-      <h4>Select Category:</h4>
-      <div className="itemslist d-flex flex-wrap" role="group" aria-label="Category selection">
+    <div className="category-tab-container">
+      <div className="category-header">
+        <h4 className="category-title">{t('category')}</h4>
+        <LanguageSwitch />
+      </div>
+      <div className="category-buttons" role="group" aria-label="Category selection">
         {categories.map((item, index) => (
           <button
-            className="btnchg btn btn-secondary mx-2 text-capitalize"
+            className="category-button"
             key={index}
             onClick={() => handleCategoryClick(item)}
             aria-label={`Select ${item} category`}
