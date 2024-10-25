@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --open",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint . && echo 'No lint errors found!'",
     "preview": "vite preview",
     "build:dev": "cross-env NODE_ENV=development vite build --mode development",
     "build:prod": "cross-env NODE_ENV=production vite build --mode production",
