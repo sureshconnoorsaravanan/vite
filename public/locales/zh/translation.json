@@ -1,0 +1,21 @@
+{
+  "app-title": "电子商务",
+  "category": "选择类别",
+  "error": "错误: {{error}}",
+  "language": "选择语言",
+  "price": "价格",
+  "add-cart": "添加到购物车",
+  "back-to-home": "返回首页",
+  "welcome-note": "欢迎来到我们的电子商务商店！",
+  "welcome-message": "发现令人惊叹的产品，以最佳价格购买您最喜欢的商品！",
+  "featured-products": "推荐产品",
+  "explore-collection": "探索我们为您精心挑选的商品系列。无论您是在寻找电子产品、服装还是家居装饰，我们都有特别的商品供您选择。",
+  "why-choose-us": "为什么选择我们？",
+  "exclusive-deals": "独家优惠和折扣",
+  "quality-assurance": "所有产品质量保证",
+  "fast-reliable-shipping": "快速可靠的配送",
+  "customer-satisfaction": "顾客满意保证",
+  "start-shopping": "立即开始购物，享受无缝的在线购物体验！",
+  "footer-rights": "电子商务商店。版权所有。",
+  "load-error": "加载语言 {{language}} 时出错: {{error}}"
+}

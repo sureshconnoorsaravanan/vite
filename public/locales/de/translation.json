@@ -1,0 +1,21 @@
+{
+  "app-title": "Elektronischer Handel",
+  "category": "Kategorie Auswählen",
+  "error": "Fehler: {{error}}",
+  "language": "Sprache Auswählen",
+  "price": "Preis",
+  "add-cart": "In den Warenkorb",
+  "back-to-home": "Zurück zur Startseite",
+  "welcome-note": "Willkommen in unserem E-Commerce-Shop!",
+  "welcome-message": "Entdecken Sie erstaunliche Produkte und kaufen Sie Ihre Favoriten zu den besten Preisen!",
+  "featured-products": "Empfohlene Produkte",
+  "explore-collection": "Durchsuchen Sie unsere Kollektion von handverlesenen Artikeln nur für Sie. Egal, ob Sie nach Elektronik, Kleidung oder Wohnkultur suchen, wir haben für jeden etwas Besonderes.",
+  "why-choose-us": "Warum Uns Wählen?",
+  "exclusive-deals": "Exklusive Angebote & Rabatte",
+  "quality-assurance": "Qualitätsgarantie für Alle Produkte",
+  "fast-reliable-shipping": "Schneller und Zuverlässiger Versand",
+  "customer-satisfaction": "Kundenzufriedenheitsgarantie",
+  "start-shopping": "Beginnen Sie jetzt mit dem Einkaufen und genießen Sie ein nahtloses Online-Shopping-Erlebnis!",
+  "footer-rights": "E-Commerce-Shop. Alle Rechte vorbehalten.",
+  "load-error": "Fehler beim Laden der Sprache {{language}}: {{error}}"
+}

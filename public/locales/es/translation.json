@@ -1,0 +1,21 @@
+{
+  "app-title": "Comercio Electrónico",
+  "category": "Seleccionar Categoría",
+  "error": "Error: {{error}}",
+  "language": "Seleccionar Idioma",
+  "price": "Precio",
+  "add-cart": "Añadir al Carrito",
+  "back-to-home": "Volver a Inicio",
+  "welcome-note": "¡Bienvenido a Nuestra Tienda de Comercio Electrónico!",
+  "welcome-message": "¡Descubre productos asombrosos y compra tus favoritos a los mejores precios!",
+  "featured-products": "Productos Destacados",
+  "explore-collection": "Explora nuestra colección de artículos seleccionados solo para ti. Ya sea que estés buscando electrónica, ropa o decoración para el hogar, tenemos algo especial para todos.",
+  "why-choose-us": "¿Por Qué Elegirnos?",
+  "exclusive-deals": "Ofertas y Descuentos Exclusivos",
+  "quality-assurance": "Garantía de Calidad en Todos los Productos",
+  "fast-reliable-shipping": "Envío Rápido y Confiable",
+  "customer-satisfaction": "Garantía de Satisfacción del Cliente",
+  "start-shopping": "¡Comienza a comprar ahora y disfruta de una experiencia de compra en línea sin inconvenientes!",
+  "footer-rights": "Tienda de Comercio Electrónico. Todos los derechos reservados.",
+  "load-error": "Error al cargar el idioma {{language}}: {{error}}"
+}
