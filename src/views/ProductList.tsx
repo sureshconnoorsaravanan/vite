@@ -17,7 +17,7 @@ const ProductList: React.FC = () => {
   }, [dispatch, categoryId]);
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 mb-5">
       <div className="row">
         {products.map((product, index) => (
           <div className="col-lg-3 col-md-4 col-sm-6 mb-3" key={product.id}>

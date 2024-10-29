@@ -63,3 +63,22 @@
     padding: 8px 16px;
   }
 }
+@media screen and (max-width:576px){ /*Small devices(landscape phones)*/
+  .category-buttons{
+    flex-flow: column;
+  }
+  .category-button{
+    background-color: rgb(103, 187, 159) !important; 
+  }
+  
+}
+@media screen and (min-width:768px)and (max-width:991px){/*Medium devices (tablets)*/
+  .category-button{
+    background-color: #0c460c !important;
+  }
+}
+@media screen and (min-width:992px)and (max-width:1200px){/*Large devices (desktops)*/
+  .category-button{
+    background-color: #edde0d !important;
+  }
+}

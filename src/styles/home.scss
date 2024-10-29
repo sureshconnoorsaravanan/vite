@@ -2,7 +2,7 @@
   text-align: center;
   padding: 20px;
   background-color: #f1f3f5;
-
+  
   .welcome-note {
     font-size: 2em;
     margin-bottom: 8px;
@@ -64,3 +64,21 @@
     }
   }
 }
+@media screen and (max-width:576px){/*Small devices(landscape phones)*/
+    .home-container{
+        background-color: aquamarine !important;
+        margin-bottom: 10%;
+    }
+}
+@media screen and (min-width:768px)and (max-width:991px){/*Medium devices (tablets)*/
+    .home-container{
+      background-color: #6df164 !important;
+      margin-bottom: 10%;
+    }
+  }
+@media screen and (min-width:992px)and (max-width:1200px){/*Large devices (desktops)*/
+    .home-container{
+      background-color: #f3ed97 !important;
+      margin-bottom: 10%;
+    }
+  }
