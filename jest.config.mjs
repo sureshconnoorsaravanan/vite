@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   preset: 'ts-jest', // Use ts-jest for transpiling TypeScript
   testEnvironment: 'jsdom', // Set the testing environment to jsdom for DOM testing
 

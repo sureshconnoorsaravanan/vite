@@ -1,8 +1,9 @@
 import { render } from '@testing-library/react';
+import { TFunction } from 'i18next';
 import Footer from '../Footer';
 
 jest.mock('i18next', () => ({
-  t: (key : any) => key, // Return the key itself as the translation
+  t: ((key: Parameters<TFunction>[0]) => key) as TFunction, // Type-safe t function
   changeLanguage: jest.fn().mockResolvedValue("eng"),
   use: jest.fn().mockReturnValue({init:jest.fn()}),
   init: jest.fn(),

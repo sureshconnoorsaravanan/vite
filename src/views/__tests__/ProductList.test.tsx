@@ -1,8 +1,10 @@
 import {
     render,
+    RenderResult
   } from "@testing-library/react";
   import { Provider } from "react-redux";
   import configureMockStore from "redux-mock-store";
+  import { TFunction } from 'i18next';
   import ProductList from "../ProductList";
   
   // Mocking the fetchCategories action
@@ -11,14 +13,14 @@ import {
   }));
   
   jest.mock('i18next', () => ({
-    t: (key: any) => key, // Return the key itself as the translation
+    t: ((key: Parameters<TFunction>[0]) => key) as TFunction, // Type-safe t function
     changeLanguage: jest.fn().mockResolvedValue("eng"),
     use: jest.fn().mockReturnValue({init:jest.fn()}),
     init: jest.fn(),
   }));
   
   
-  let products = [
+  const products = [
     {
         "id": 1,
         "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -88,7 +90,7 @@ import {
     const mockStore = configureMockStore();
     let store: ReturnType<typeof mockStore>;
   
-    let wrapper : any
+    let wrapper: RenderResult['asFragment'];
     beforeEach(() => {
       store = mockStore();
       const { asFragment } = render(

@@ -1,6 +1,7 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, RenderResult } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { useNavigate } from 'react-router-dom';
+import { TFunction } from 'i18next';
 import Navbar from '../Navbar';
 
 // Mock the useNavigate hook
@@ -8,7 +9,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn(),
 }));
 jest.mock('i18next', () => ({
-  t: (key : any) => key, // Return the key itself as the translation
+  t: ((key: Parameters<TFunction>[0]) => key) as TFunction, // Type-safe t function
   changeLanguage: jest.fn().mockResolvedValue("eng"),
   use: jest.fn().mockReturnValue({init:jest.fn()}),
   init: jest.fn(),
@@ -17,7 +18,7 @@ jest.mock('i18next', () => ({
 describe('Navbar Component', () => {
   const mockNavigate = jest.fn();
 
-  let wrapper: any
+  let wrapper: RenderResult['asFragment'];
   beforeEach(() => {
     // Set up mock for useNavigate
     (useNavigate as jest.Mock).mockReturnValue(mockNavigate);

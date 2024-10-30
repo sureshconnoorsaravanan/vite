@@ -2,10 +2,12 @@ import {
     render,
     screen,
     fireEvent,
+    RenderResult
   } from "@testing-library/react";
   import { Provider } from "react-redux";
-  import { BrowserRouter } from "react-router-dom";
+  import { BrowserRouter, useNavigate } from "react-router-dom";
   import configureMockStore from "redux-mock-store";
+  import { TFunction } from 'i18next';
   import CategoryTab from "../CategoryTab";
   
   // Mocking the fetchCategories action
@@ -14,14 +16,14 @@ import {
   }));
   
   jest.mock('i18next', () => ({
-    t: (key: any) => key, // Return the key itself as the translation
+    t: ((key: Parameters<TFunction>[0]) => key) as TFunction, // Type-safe t function
     changeLanguage: jest.fn().mockResolvedValue("eng"),
     use: jest.fn().mockReturnValue({init:jest.fn()}),
     init: jest.fn(),
   }));
   
   
-  let categories = [
+  const categories = [
     "electronics",
     "jewelery",
     "men's clothing",
@@ -49,12 +51,10 @@ import {
     const mockStore = configureMockStore();
     let store: ReturnType<typeof mockStore>;
   
-    let wrapper : any;
+    let wrapper: RenderResult['asFragment'];
     beforeEach(() => {
       store = mockStore();
-      (require("react-router-dom").useNavigate as jest.Mock).mockReturnValue(
-        mockNavigate
-      );
+      (useNavigate as jest.Mock).mockReturnValue(mockNavigate);
       const { asFragment } = render(
         <Provider store={store}>
           <BrowserRouter>
