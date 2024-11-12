@@ -1,0 +1,67 @@
+.FormContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.basic-form {
+    max-width: 400px;
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+.error{
+    color: red;
+}
+.heading{
+    text-align: center;
+}
+.submit-btn{
+padding: 12px 24px;
+  background-color: #28a745;  /* Green background */
+  color: white;  /* Text color */
+  border: none;  /* No border */
+  border-radius: 50px;  /* Fully rounded button */
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Light shadow */
+  transition: all 0.3s ease;  /* Smooth transition on hover */
+  margin: 10px;
+}
+
+.ounded-button:hover {
+  background-color: #218838;  /* Darker green on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Darker shadow on hover */
+}
+
+.basic-input {
+    padding: 10px;
+    background-color: #f5f5f5; /* Light gray background */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    width: 100%; /* Full width of parent container */
+    box-sizing: border-box; /* Include padding and border in element's width */
+    transition: border 0.3s ease; /* Smooth transition on focus */
+  }
+  
+  .basic-input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default focus outline */
+  }
+  .basic-label {
+    font-size: 16px; /* Set font size */
+    color: #333; /* Set text color */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 8px; /* Space below the label */
+    display: block; /* Make label take full width */
+  }
+
+  .div-label-input{
+    display: flex;
+  }
