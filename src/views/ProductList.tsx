@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { fetchProductsByCategory } from '../redux/slices/products/productSlice';
 import { useTranslation } from 'react-i18next';
+import { auth  ,db} from '../components/firebase';
+import { addToCart } from '../redux/slices/cartSlice';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ProductList: React.FC = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -10,11 +14,22 @@ const ProductList: React.FC = () => {
   const { t } = useTranslation();
   const { products } = useAppSelector(state => state.products);
 
+
   useEffect(() => {
     if (categoryId) {
       dispatch(fetchProductsByCategory(categoryId));
     }
   }, [dispatch, categoryId]);
+
+ async function addToCartClick(product: any){
+ await auth.onAuthStateChanged((user) => {
+    if (user) {
+  dispatch(addToCart(product));
+  }
+    else{
+      toast.error("Login must be needed",{position:'top-center'})    
+  }})
+  }
 
   return (
     <div className="container mt-5 mb-5">
@@ -47,12 +62,16 @@ const ProductList: React.FC = () => {
                 <p className="card-text">
                   <strong>{t('price')}:</strong> ${product.price.toFixed(2)}
                 </p>
-                <button className="btn btn-warning" aria-label={`Add ${product.title} to cart`}>
+                <button className="btn btn-warning" aria-label={`Add ${product.title} to cart`} onClick={()=>{addToCartClick(product)}}>
                   {t('add-cart')}
                 </button>
               </div>
             </div>
+            <div className='toster'>
+    <ToastContainer/>
+    </div>
           </div>
+          
         ))}
       </div>
     </div>

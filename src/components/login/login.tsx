@@ -57,7 +57,7 @@ const LoginForm: React.FC = () => {
           await signInWithEmailAndPassword(auth,email,password) 
           console.log('Login successfully:', );
           toast.success("Login successfully!!",{position:'top-center'})
-       //   navigate('/profile')
+          navigate('/')
         } catch (error: unknown) {
             if (error instanceof Error) {
                 console.log('Error:',error );

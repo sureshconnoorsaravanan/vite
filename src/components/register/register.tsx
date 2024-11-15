@@ -5,10 +5,10 @@ import {setDoc,doc} from 'firebase/firestore'
 import { ToastContainer, toast } from 'react-toastify';
 import './register.css'; 
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm: React.FC = () => {
-
-interface FormState {
+  interface FormState {
  fName: string;
   lName: string;
   password: string;
@@ -18,18 +18,13 @@ const [email, setemail] = useState<any>("")
 const [password, setpassword] = useState<any>("")
 const [fName, setfName] = useState<String>("")
 const [lName, setlName] = useState<String>("")
-
-
-
-
-  const [errors, setErrors] = useState<FormState>({
+const [errors, setErrors] = useState<FormState>({
     fName:'',
     lName: '',
     email: '',
     password: '',  
   });
-
-
+  const navigate = useNavigate();
   const validateForm = (): boolean => {
     const newErrors = { ...errors };
     let isValid = true;
@@ -63,15 +58,12 @@ const [lName, setlName] = useState<String>("")
     } else {
       newErrors.password = '';
     }
-
-
     setErrors(newErrors);
     return isValid;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (validateForm()) {
         try {
        await   createUserWithEmailAndPassword(auth,email,password)
@@ -84,9 +76,10 @@ const [lName, setlName] = useState<String>("")
             email: email,
             password: password
         })
-       }0
+       }
        console.log('Form submitted successfully with data:', );
        toast.success("Form submitted successfully!!",{position:'top-center'})
+       navigate('/login')
         }  catch (error: unknown) {
             // Narrow the type using instanceof
             if (error instanceof Error) {
@@ -96,8 +89,7 @@ const [lName, setlName] = useState<String>("")
         }
     }
   };
-
-  return (<>
+return (<>
   <div className="login-form-container">
     <form className='basic-form' onSubmit={handleSubmit} noValidate>
         <h3 className='heading'>Registration Form</h3>
